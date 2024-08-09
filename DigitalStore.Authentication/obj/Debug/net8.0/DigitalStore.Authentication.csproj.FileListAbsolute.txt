@@ -1,0 +1,11 @@
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Authentication/bin/Debug/net8.0/DigitalStore.Authentication.deps.json
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Authentication/bin/Debug/net8.0/DigitalStore.Authentication.dll
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Authentication/bin/Debug/net8.0/DigitalStore.Authentication.pdb
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Authentication/obj/Debug/net8.0/DigitalStore.Authentication.GeneratedMSBuildEditorConfig.editorconfig
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Authentication/obj/Debug/net8.0/DigitalStore.Authentication.AssemblyInfoInputs.cache
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Authentication/obj/Debug/net8.0/DigitalStore.Authentication.AssemblyInfo.cs
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Authentication/obj/Debug/net8.0/DigitalStore.Authentication.csproj.CoreCompileInputs.cache
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Authentication/obj/Debug/net8.0/DigitalStore.Authentication.dll
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Authentication/obj/Debug/net8.0/refint/DigitalStore.Authentication.dll
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Authentication/obj/Debug/net8.0/DigitalStore.Authentication.pdb
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Authentication/obj/Debug/net8.0/ref/DigitalStore.Authentication.dll

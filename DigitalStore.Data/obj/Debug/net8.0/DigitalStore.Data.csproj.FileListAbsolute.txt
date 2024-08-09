@@ -1,0 +1,15 @@
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Data/bin/Debug/net8.0/DigitalStore.Data.deps.json
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Data/bin/Debug/net8.0/DigitalStore.Data.dll
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Data/bin/Debug/net8.0/DigitalStore.Data.pdb
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Data/bin/Debug/net8.0/DigitalStore.Core.dll
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Data/bin/Debug/net8.0/DigitalStore.Core.pdb
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Data/obj/Debug/net8.0/DigitalStore.Data.csproj.AssemblyReference.cache
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Data/obj/Debug/net8.0/DigitalStore.Data.GeneratedMSBuildEditorConfig.editorconfig
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Data/obj/Debug/net8.0/DigitalStore.Data.AssemblyInfoInputs.cache
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Data/obj/Debug/net8.0/DigitalStore.Data.AssemblyInfo.cs
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Data/obj/Debug/net8.0/DigitalStore.Data.csproj.CoreCompileInputs.cache
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Data/obj/Debug/net8.0/DigitalS.70F7EA23.Up2Date
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Data/obj/Debug/net8.0/DigitalStore.Data.dll
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Data/obj/Debug/net8.0/refint/DigitalStore.Data.dll
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Data/obj/Debug/net8.0/DigitalStore.Data.pdb
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Data/obj/Debug/net8.0/ref/DigitalStore.Data.dll

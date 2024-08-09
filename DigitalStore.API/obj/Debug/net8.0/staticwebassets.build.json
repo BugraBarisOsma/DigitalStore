@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "L7WU4VUyuA8tHSt/UB7SIHRzjSjSXw795gvgkCQrrkk=",
+  "Source": "DigitalStore.API",
+  "BasePath": "_content/DigitalStore.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
