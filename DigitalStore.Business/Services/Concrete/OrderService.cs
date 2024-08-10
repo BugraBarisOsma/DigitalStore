@@ -19,14 +19,32 @@ public class OrderService : IOrderService
         _mapper = mapper;
      
     }
-
-
-
+    
     public async Task<List<OrderResponseDTO>> GetActiveOrdersAsync()
     {
         var activeOrders = await _unitOfWork.GetRepository<Order>()
             .GetAllByFilterAsync(o => o.IsActive); 
         return _mapper.Map<List<OrderResponseDTO>>(activeOrders);
+    }
+    public async Task<Order> CreateOrderForUserAsync(string userId)
+    {
+        var order = new Order
+        {
+            UserId = userId,
+            CreatedDate = DateTime.UtcNow,
+            IsActive = true,
+            OrderDetails = new List<OrderDetail>(),
+            TotalAmount = 0,
+            Id = Guid.NewGuid(),
+            PointsUsed = 0,
+            CouponAmount = 0,
+            CouponCode = string.Empty,
+        };
+
+        await _unitOfWork.GetRepository<Order>().AddAsync(order);
+        await _unitOfWork.SaveChangesAsync();
+
+        return order;
     }
 
 
@@ -39,9 +57,9 @@ public class OrderService : IOrderService
 
     public async Task<OrderResponseDTO> GetOrderDetailsAsync(Guid id)
     {
-        var orders = await _unitOfWork.GetRepository<Order>()
-            .GetAllByFilterAsync(o => o.Id == id && o.IsActive, include: q => q.Include(o => o.OrderDetails));
-        var order = orders.FirstOrDefault();
+        var userId = id.ToString();
+        var order = await _unitOfWork.GetRepository<Order>()
+            .GetByFilterAsync(o => o.UserId == userId && o.IsActive, include: q => q.Include(o => o.OrderDetails));
         if (order == null)
         {
             throw new Exception("Order not found");

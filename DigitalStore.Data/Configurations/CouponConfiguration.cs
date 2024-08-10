@@ -17,7 +17,7 @@ public class CouponConfiguration : IEntityTypeConfiguration<Coupon>
         builder.Property(c => c.ExpiryDate)
             .IsRequired();
 
-        builder.Property(c => c.IsUsed)
+        builder.Property(c => c.IsActive)
             .IsRequired();
     }
 }

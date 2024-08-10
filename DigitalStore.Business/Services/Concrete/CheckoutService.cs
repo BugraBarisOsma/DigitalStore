@@ -33,7 +33,7 @@ namespace DigitalStore.Business.Services.Concrete
             if (!string.IsNullOrEmpty(couponCode))
             {
                 var coupon = await _unitOfWork.GetRepository<Coupon>()
-                    .GetByFilterAsync(x => x.Code == couponCode && x.IsUsed == false && x.ExpiryDate >= DateTime.UtcNow);
+                    .GetByFilterAsync(x => x.Code == couponCode && x.IsActive == false && x.ExpiryDate >= DateTime.UtcNow);
                 
                 if (coupon == null)
                 {
@@ -43,7 +43,7 @@ namespace DigitalStore.Business.Services.Concrete
                 totalAmount -= coupon.Amount;
                 totalAmount = Math.Max(totalAmount, 0);
 
-                coupon.IsUsed = true;
+                coupon.IsActive = true;
                 await _unitOfWork.GetRepository<Coupon>().UpdateAsync(coupon);
             }
 
@@ -75,6 +75,7 @@ namespace DigitalStore.Business.Services.Concrete
 
             return new CheckoutResultDTO()
             {
+                UserId = user.Id,
                 TotalAmount = totalAmount,
                 PointsEarned = totalPointsEarned - pointsToUse
             };

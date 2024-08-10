@@ -60,7 +60,8 @@ public class CategoryService : ICategoryService
             return false; // Category cannot be deleted
         }
 
-        await _unitOfWork.GetRepository<Category>().DeleteAsync(category);
+        category.IsActive = false;
+        await _unitOfWork.GetRepository<Category>().UpdateAsync(category);
         await _unitOfWork.SaveChangesAsync();
         return true;
     }

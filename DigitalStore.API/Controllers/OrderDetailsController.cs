@@ -16,6 +16,11 @@ public class OrderDetailController : ControllerBase
     {
         _orderDetailService = orderDetailService;
     }
+    /// <summary>
+    /// Add a product to your order
+    /// </summary>
+    /// <response code="200">Success</response>
+    /// <response code="404">Order Not Found</response>
     [HttpPost("add-product/{orderId}")]
     public async Task<IActionResult> AddProductToOrder(Guid orderId, OrderItemDTO orderItemDto)
     {
@@ -37,7 +42,11 @@ public class OrderDetailController : ControllerBase
             return BadRequest(ex.Message);
         }
     }
-
+    /// <summary>
+    /// Get order details
+    /// </summary>
+    /// <response code="200">Success</response>
+    /// <response code="404">Order Not Found</response>
     [HttpGet("{id}")]
     public async Task<IActionResult> GetOrderDetail(Guid id)
     {
@@ -48,7 +57,11 @@ public class OrderDetailController : ControllerBase
         }
         return Ok(orderDetail);
     }
-
+    /// <summary>
+    /// Get all order details
+    /// </summary>
+    /// <response code="200">Success</response>
+    /// <response code="404">Order Not Found</response>
     [HttpGet]
     public async Task<IActionResult> GetAllOrderDetails()
     {
@@ -56,13 +69,11 @@ public class OrderDetailController : ControllerBase
         return Ok(orderDetails);
     }
 
-    [HttpPost]
-    public async Task<IActionResult> CreateOrderDetail([FromBody] OrderDetail orderDetail)
-    {
-        await _orderDetailService.CreateOrderDetailAsync(orderDetail);
-        return CreatedAtAction(nameof(GetOrderDetail), new { id = orderDetail.Id }, orderDetail);
-    }
-
+    /// <summary>
+    /// Update a order detail
+    /// </summary>
+    /// <response code="200">Success</response>
+    /// <response code="404">Order Not Found</response>
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateOrderDetail(Guid id, [FromBody] OrderDetail orderDetail)
     {
@@ -73,7 +84,11 @@ public class OrderDetailController : ControllerBase
         await _orderDetailService.UpdateOrderDetailAsync(orderDetail);
         return NoContent();
     }
-
+    /// <summary>
+    /// delete a order detail
+    /// </summary>
+    /// <response code="200">Success</response>
+    /// <response code="404">Order Not Found</response>
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteOrderDetail(Guid id)
     {

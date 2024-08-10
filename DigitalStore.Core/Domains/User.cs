@@ -12,9 +12,9 @@ public class User : IdentityUser
     public string Surname { get; set; }
     public string Email { get; set; }
     public string Password { get; set; }
-    public string Role { get; set; } 
-    public bool isActive { get; set; }
-    public decimal WalletBalance { get; set; }
+    public string Role { get; set; } = "Customer";
+    public bool isActive { get; set; } = true;
+    public decimal WalletBalance { get; set; } = 2000;
     public List<Order> Orders { get; set; }
-    public int Points { get; set; }
+    public int Points { get; set; } = 10;
 }

@@ -28,6 +28,15 @@ namespace DigitalStore.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -62,11 +71,17 @@ namespace DigitalStore.Data.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("character varying(10)");
 
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<DateTime>("ExpiryDate")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<bool>("IsUsed")
+                    b.Property<bool>("IsActive")
                         .HasColumnType("boolean");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 
@@ -80,6 +95,18 @@ namespace DigitalStore.Data.Migrations
 
                     b.Property<Guid>("CategoryId")
                         .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uuid");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("timestamp with time zone");
 
                     b.HasKey("ProductId", "CategoryId");
 
@@ -116,13 +143,13 @@ namespace DigitalStore.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "33fbf6de-b4c7-4661-983b-e271bfa0475a",
+                            Id = "029c0ed6-dd79-4c54-9c87-bfc651c009df",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "68302ddf-5c72-4fbd-8995-f2368bb78c8e",
+                            Id = "4902ed63-8360-42fb-9e3f-e64fa7306c58",
                             Name = "Customer",
                             NormalizedName = "CUSTOMER"
                         });
@@ -217,8 +244,8 @@ namespace DigitalStore.Data.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "b5d9557a-ab14-471f-88ed-6238c09dd75e",
-                            RoleId = "33fbf6de-b4c7-4661-983b-e271bfa0475a"
+                            UserId = "b756e11a-1cc1-4b20-82ca-b839bdb40d9c",
+                            RoleId = "029c0ed6-dd79-4c54-9c87-bfc651c009df"
                         });
                 });
 
@@ -254,8 +281,14 @@ namespace DigitalStore.Data.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("character varying(10)");
 
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<bool>("IsActive")
                         .HasColumnType("boolean");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<decimal>("PointsUsed")
                         .HasColumnType("decimal(18,2)");
@@ -279,6 +312,15 @@ namespace DigitalStore.Data.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<Guid>("OrderId")
                         .HasColumnType("uuid");
@@ -307,11 +349,17 @@ namespace DigitalStore.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<bool>("IsActive")
                         .HasColumnType("boolean");
 
                     b.Property<decimal>("MaxRewardPoints")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -395,17 +443,17 @@ namespace DigitalStore.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "b5d9557a-ab14-471f-88ed-6238c09dd75e",
-                            ConcurrencyStamp = "904dfed9-8890-4216-8db4-969f32b0c219",
+                            Id = "b756e11a-1cc1-4b20-82ca-b839bdb40d9c",
+                            ConcurrencyStamp = "1f63a2ff-4ec8-49f5-8b63-f32e2331dd32",
                             NormalizedEmail = "ADMIN@EXAMPLE.COM",
                             NormalizedUserName = "ADMIN",
                             Password = "admin123",
-                            Points = 0,
+                            Points = 10,
                             Role = "Admin",
-                            SecurityStamp = "f193d420-fa68-4fcb-8f91-8568bcd6ca7a",
+                            SecurityStamp = "e69c7fe5-4338-495c-8125-8f966ad57bd8",
                             Surname = "admin",
                             Username = "admin",
-                            WalletBalance = 0m,
+                            WalletBalance = 2000m,
                             isActive = true
                         });
                 });

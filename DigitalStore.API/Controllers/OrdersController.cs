@@ -16,9 +16,11 @@ public class OrdersController : ControllerBase
     {
         _orderService = orderService;
     }
-
- 
-
+    /// <summary>
+    /// Get all active orders
+    /// </summary>
+    /// <response code="200">Returns orders</response>
+    /// <response code="404">if orders not found</response>
     [HttpGet("active")]
     public async Task<IActionResult> GetActiveOrders()
     {
@@ -26,13 +28,22 @@ public class OrdersController : ControllerBase
         return Ok(orders);
     }
 
+    /// <summary>
+    /// Get order history
+    /// </summary>
+    /// <response code="200">Success</response>
+    /// <response code="404">Order/Orders Not Found</response>
     [HttpGet("history")]
     public async Task<IActionResult> GetOrderHistory()
     {
         var orders = await _orderService.GetOrderHistoryAsync();
         return Ok(orders);
     }
-
+    /// <summary>
+    /// Get all order details
+    /// </summary>
+    /// <response code="200">Success</response>
+    /// <response code="404">Order Not Found</response>
     [HttpGet("{id}")]
     public async Task<IActionResult> GetOrderDetails(Guid id)
     {

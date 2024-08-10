@@ -12,3 +12,4 @@
 /Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Core/obj/Debug/net8.0/DigitalStore.Core.pdb
 /Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Core/obj/Debug/net8.0/DigitalStore.Core.genruntimeconfig.cache
 /Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Core/obj/Debug/net8.0/ref/DigitalStore.Core.dll
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Core/obj/Debug/net8.0/DigitalStore.Core.sourcelink.json

@@ -25,7 +25,11 @@ public class AuthController : ControllerBase
         _configuration = configuration;
         _jwtGenerator = jwtGenerator;
     }
-
+    /// <summary>
+    /// Basic authorization for login
+    /// </summary>
+    /// <response code="200">Returns a Token</response>
+    /// <response code="404">If user not found</response>
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] LoginRequest request)
     {

@@ -13,3 +13,4 @@
 /Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Data/obj/Debug/net8.0/refint/DigitalStore.Data.dll
 /Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Data/obj/Debug/net8.0/DigitalStore.Data.pdb
 /Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Data/obj/Debug/net8.0/ref/DigitalStore.Data.dll
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Data/obj/Debug/net8.0/DigitalStore.Data.sourcelink.json

@@ -42,20 +42,9 @@ public class UserService : IUserService
         user.isActive = true;
        
         var regiesteredUser  = await _unitOfWork.GetRepository<User>().AddAsync(user);
+        await _unitOfWork.SaveChangesAsync();
         return regiesteredUser;
 
-    }
-
-    public async Task<string?> LoginUserAsync(UserRequestDTO userDto)
-    {
-        var result = await _signInManager.PasswordSignInAsync(userDto.Email, userDto.Password, false, lockoutOnFailure: false);
-        if (result.Succeeded)
-        {
-            var user = await _userManager.FindByEmailAsync(userDto.Email);
-            return _jwtTokenGenerator.GenerateToken(user);
-        }
-
-        return null;
     }
 
     public async Task UpdateUserAsync(Guid id, UserRequestDTO  userDto)
@@ -84,8 +73,7 @@ public class UserService : IUserService
         var user = await _userManager.FindByIdAsync(userId);
         if (user == null)
             throw new KeyNotFoundException("User not found");
-
-        // Assuming points are stored in the user entity
+        
         return user.Points;
     }
 }

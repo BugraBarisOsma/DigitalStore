@@ -15,7 +15,11 @@ public class CategoriesController : ControllerBase
     {
         _categoryService = categoryService;
     }
-
+    /// <summary>
+    /// Add a category
+    /// </summary>
+    /// <response code="200">Success</response>
+    /// <response code="401">Unauthorized</response>
     [HttpPost]
     [Authorize(Roles = "Admin")]
     public async Task<IActionResult> AddCategory(CategoryRequestDTO categoryDto)
@@ -23,7 +27,11 @@ public class CategoriesController : ControllerBase
         await _categoryService.AddCategoryAsync(categoryDto);
         return Ok();
     }
-
+    /// <summary>
+    /// Update a category
+    /// </summary>
+    /// <response code="200">Success</response>
+    /// <response code="401">Unauthorized</response>
     [HttpPut("{id}")]
     [Authorize(Roles = "Admin")]
     public async Task<IActionResult> UpdateCategory(Guid id, CategoryRequestDTO categoryDto)
@@ -31,21 +39,30 @@ public class CategoriesController : ControllerBase
         await _categoryService.UpdateCategoryAsync(id, categoryDto);
         return Ok();
     }
-
+    /// <summary>
+    /// Get all categories
+    /// </summary>
+    /// <response code="200">Success</response>
     [HttpGet]
     public async Task<IActionResult> GetCategories()
     {
         var categories = await _categoryService.GetCategoriesAsync();
         return Ok(categories);
     }
-
+    /// <summary>
+    /// Get all products by categories
+    /// </summary>
+    /// <response code="200">Success</response>
     [HttpGet("{id}/products")]
     public async Task<IActionResult> GetProductsByCategory(Guid id)
     {
         var products = await _categoryService.GetProductsByCategoryAsync(id);
         return Ok(products);
     }
-
+    /// <summary>
+    /// delete a category
+    /// </summary>
+    /// <response code="200">Success</response>
     [HttpDelete("{id}")]
     [Authorize(Roles = "Admin")]
     public async Task<IActionResult> DeleteCategory(Guid id)

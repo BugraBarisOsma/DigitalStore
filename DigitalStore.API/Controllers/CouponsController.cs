@@ -16,21 +16,30 @@ public class CouponsController : ControllerBase
     {
         _couponService = couponService;
     }
-
+    /// <summary>
+    /// Create a coupon
+    /// </summary>
+    /// <response code="200">Success</response>
     [HttpPost]
     public async Task<IActionResult> CreateCoupon(CouponRequestDTO couponDto)
     {
         await _couponService.CreateCouponAsync(couponDto);
         return Ok();
     }
-
+    /// <summary>
+    /// Get all coupons
+    /// </summary>
+    /// <response code="200">Success</response>
     [HttpGet]
     public async Task<IActionResult> GetCoupons()
     {
         var coupons = await _couponService.GetCouponsAsync();
         return Ok(coupons);
     }
-
+    /// <summary>
+    /// delete a coupon
+    /// </summary>
+    /// <response code="200">Success</response>
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteCoupon(Guid id)
     {

@@ -129,3 +129,14 @@
 /Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.API/obj/Debug/net8.0/DigitalStore.API.pdb
 /Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.API/obj/Debug/net8.0/DigitalStore.API.genruntimeconfig.cache
 /Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.API/obj/Debug/net8.0/ref/DigitalStore.API.dll
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.API/bin/Debug/net8.0/Dapper.dll
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.API/bin/Debug/net8.0/Hangfire.AspNetCore.dll
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.API/bin/Debug/net8.0/Hangfire.Core.dll
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.API/bin/Debug/net8.0/Hangfire.NetCore.dll
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.API/bin/Debug/net8.0/Hangfire.PostgreSql.dll
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.API/bin/Debug/net8.0/Newtonsoft.Json.dll
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.API/bin/Debug/net8.0/RabbitMQ.Client.dll
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.API/bin/Debug/net8.0/RabbitMQ.Client.Core.DependencyInjection.dll
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.API/obj/Debug/net8.0/DigitalStore.API.sourcelink.json
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.API/bin/Debug/net8.0/Hangfire.SqlServer.dll
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.API/bin/Debug/net8.0/DigitalStore.API.xml

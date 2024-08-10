@@ -13,4 +13,5 @@ public interface IOrderService
     Task<List<OrderResponseDTO>> GetActiveOrdersAsync();
     Task<List<OrderResponseDTO>> GetOrderHistoryAsync();
     Task<OrderResponseDTO> GetOrderDetailsAsync(Guid id);
+    Task<Order> CreateOrderForUserAsync(string userId);
 }

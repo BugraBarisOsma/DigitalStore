@@ -44,7 +44,8 @@ public class CouponService : ICouponService
             throw new Exception("Coupon not found");
         }
 
-        await _unitOfWork.GetRepository<Coupon>().DeleteAsync(coupon);
+        coupon.IsActive = false;
+        await _unitOfWork.GetRepository<Coupon>().UpdateAsync(coupon);
         await _unitOfWork.SaveChangesAsync();
     }
 }

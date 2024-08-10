@@ -44,7 +44,8 @@ public class OrderDetailService : IOrderDetailService
         var orderDetail = await _unitOfWork.GetRepository<OrderDetail>().GetByIdAsync(id);
         if (orderDetail != null)
         {
-            _unitOfWork.GetRepository<OrderDetail>().DeleteAsync(orderDetail);
+            orderDetail.IsActive = false;
+            _unitOfWork.GetRepository<OrderDetail>().UpdateAsync(orderDetail);
             await _unitOfWork.SaveChangesAsync();
         }
     }
