@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DigitalStore.API</name>
+    </assembly>
+    <members>
+        <member name="M:DigitalStore.API.Controllers.AuthController.Login(DigitalStore.Core.DTOs.LoginRequest)">
+            <summary>
+            Basic authorization for login
+            </summary>
+            <response code="200">Returns a Token</response>
+            <response code="404">If user not found</response>
+        </member>
+        <member name="M:DigitalStore.API.Controllers.CategoriesController.AddCategory(DigitalStore.Core.DTOs.CategoryRequestDTO)">
+            <summary>
+            Add a category
+            </summary>
+            <response code="200">Success</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:DigitalStore.API.Controllers.CategoriesController.UpdateCategory(System.Guid,DigitalStore.Core.DTOs.CategoryRequestDTO)">
+            <summary>
+            Update a category
+            </summary>
+            <response code="200">Success</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:DigitalStore.API.Controllers.CategoriesController.GetCategories">
+            <summary>
+            Get all categories
+            </summary>
+            <response code="200">Success</response>
+        </member>
+        <member name="M:DigitalStore.API.Controllers.CategoriesController.GetProductsByCategory(System.Guid)">
+            <summary>
+            Get all products by categories
+            </summary>
+            <response code="200">Success</response>
+        </member>
+        <member name="M:DigitalStore.API.Controllers.CategoriesController.DeleteCategory(System.Guid)">
+            <summary>
+            delete a category
+            </summary>
+            <response code="200">Success</response>
+        </member>
+        <member name="M:DigitalStore.API.Controllers.CheckoutController.CheckoutAsync(System.Guid,System.String,System.Decimal)">
+            <summary>
+            Make payment
+            </summary>
+            <response code="200">Success</response>
+        </member>
+        <member name="M:DigitalStore.API.Controllers.CouponsController.CreateCoupon(DigitalStore.Core.DTOs.CouponRequestDTO)">
+            <summary>
+            Create a coupon
+            </summary>
+            <response code="200">Success</response>
+        </member>
+        <member name="M:DigitalStore.API.Controllers.CouponsController.GetCoupons">
+            <summary>
+            Get all coupons
+            </summary>
+            <response code="200">Success</response>
+        </member>
+        <member name="M:DigitalStore.API.Controllers.CouponsController.DeleteCoupon(System.Guid)">
+            <summary>
+            delete a coupon
+            </summary>
+            <response code="200">Success</response>
+        </member>
+        <member name="M:DigitalStore.API.Controllers.OrderDetailController.AddProductToOrder(System.Guid,DigitalStore.Core.DTOs.OrderItemDTO)">
+            <summary>
+            Add a product to your order
+            </summary>
+            <response code="200">Success</response>
+            <response code="404">Order Not Found</response>
+        </member>
+        <member name="M:DigitalStore.API.Controllers.OrderDetailController.GetOrderDetail(System.Guid)">
+            <summary>
+            Get order details
+            </summary>
+            <response code="200">Success</response>
+            <response code="404">Order Not Found</response>
+        </member>
+        <member name="M:DigitalStore.API.Controllers.OrderDetailController.GetAllOrderDetails">
+            <summary>
+            Get all order details
+            </summary>
+            <response code="200">Success</response>
+            <response code="404">Order Not Found</response>
+        </member>
+        <member name="M:DigitalStore.API.Controllers.OrderDetailController.UpdateOrderDetail(System.Guid,OrderDetail)">
+            <summary>
+            Update a order detail
+            </summary>
+            <response code="200">Success</response>
+            <response code="404">Order Not Found</response>
+        </member>
+        <member name="M:DigitalStore.API.Controllers.OrderDetailController.DeleteOrderDetail(System.Guid)">
+            <summary>
+            delete a order detail
+            </summary>
+            <response code="200">Success</response>
+            <response code="404">Order Not Found</response>
+        </member>
+        <member name="M:DigitalStore.API.Controllers.OrdersController.GetActiveOrders">
+            <summary>
+            Get all active orders
+            </summary>
+            <response code="200">Returns orders</response>
+            <response code="404">if orders not found</response>
+        </member>
+        <member name="M:DigitalStore.API.Controllers.OrdersController.GetOrderHistory">
+            <summary>
+            Get order history
+            </summary>
+            <response code="200">Success</response>
+            <response code="404">Order/Orders Not Found</response>
+        </member>
+        <member name="M:DigitalStore.API.Controllers.OrdersController.GetOrderDetails(System.Guid)">
+            <summary>
+            Get all order details
+            </summary>
+            <response code="200">Success</response>
+            <response code="404">Order Not Found</response>
+        </member>
+        <member name="M:DigitalStore.API.Controllers.ProductsController.AddProduct(DigitalStore.Core.DTOs.ProductRequestDTO)">
+            <summary>
+            Add a new product
+            </summary>
+            <response code="200">Success</response>
+            <response code="400">Unauthorized</response>
+        </member>
+        <member name="M:DigitalStore.API.Controllers.ProductsController.UpdateProduct(System.Guid,DigitalStore.Core.DTOs.ProductRequestDTO)">
+            <summary>
+            Update a product
+            </summary>
+            <response code="200">Success</response>
+            <response code="400">Unauthorized</response>
+        </member>
+        <member name="M:DigitalStore.API.Controllers.ProductsController.GetProducts">
+            <summary>
+            Get all products
+            </summary>
+            <response code="200">Success</response>
+        </member>
+        <member name="M:DigitalStore.API.Controllers.ProductsController.GetProductsByCategory(System.Guid)">
+            <summary>
+            Get all products by category
+            </summary>
+            <response code="200">Success</response>
+        </member>
+        <member name="M:DigitalStore.API.Controllers.ProductsController.DeleteProduct(System.Guid)">
+            <summary>
+            Delete a product
+            </summary>
+            <response code="200">Success</response>
+            <response code="400">Unauthorized</response>
+        </member>
+        <member name="M:DigitalStore.API.Controllers.UsersController.Register(DigitalStore.Core.DTOs.UserRequestDTO)">
+            <summary>
+            Create a user
+            </summary>
+            <response code="200">Success</response>
+        </member>
+        <member name="M:DigitalStore.API.Controllers.UsersController.UpdateUser(System.Guid,DigitalStore.Core.DTOs.UserRequestDTO)">
+            <summary>
+            Update a user
+            </summary>
+            <response code="200">Success</response>
+            <response code="400">Unauthorized</response>
+        </member>
+        <member name="M:DigitalStore.API.Controllers.UsersController.DeleteUser(System.Guid)">
+            <summary>
+            Delete a user
+            </summary>
+            <response code="200">Success</response>
+            <response code="400">Unauthorized</response>
+        </member>
+        <member name="M:DigitalStore.API.Controllers.UsersController.GetUserPoints(System.String)">
+            <summary>
+            Get points of a user
+            </summary>
+            <response code="200">Success</response>
+        </member>
+    </members>
+</doc>
