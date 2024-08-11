@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1Ax4PMD5HA7l9zAdfzNVECO7tVUqXh0Me32doCCkPQ1QQ90cer/oNA5n8qC9O7DMohMNqIAPkjsu0eL+EjIGDA==",
+  "dgSpecHash": "bxHeqmGiY7KZfEhNAawxfsxFkGgAz+N0gstKkbCvAducQjv8y37NKhTDNfW8EkxOsoYZ12tS66sFejr9Z6FYeA==",
   "success": true,
   "projectFilePath": "/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.Business/DigitalStore.Business.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,9 @@
     "/Users/bugrabarisosma/.nuget/packages/automapper/13.0.1/automapper.13.0.1.nupkg.sha512",
     "/Users/bugrabarisosma/.nuget/packages/automapper.contrib.autofac.dependencyinjection/8.0.0/automapper.contrib.autofac.dependencyinjection.8.0.0.nupkg.sha512",
     "/Users/bugrabarisosma/.nuget/packages/dapper/2.0.123/dapper.2.0.123.nupkg.sha512",
+    "/Users/bugrabarisosma/.nuget/packages/fluentvalidation/11.9.2/fluentvalidation.11.9.2.nupkg.sha512",
+    "/Users/bugrabarisosma/.nuget/packages/fluentvalidation.aspnetcore/11.3.0/fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "/Users/bugrabarisosma/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.9.2/fluentvalidation.dependencyinjectionextensions.11.9.2.nupkg.sha512",
     "/Users/bugrabarisosma/.nuget/packages/hangfire/1.8.14/hangfire.1.8.14.nupkg.sha512",
     "/Users/bugrabarisosma/.nuget/packages/hangfire.aspnetcore/1.8.14/hangfire.aspnetcore.1.8.14.nupkg.sha512",
     "/Users/bugrabarisosma/.nuget/packages/hangfire.core/1.8.14/hangfire.core.1.8.14.nupkg.sha512",

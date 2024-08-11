@@ -143,13 +143,13 @@ namespace DigitalStore.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "029c0ed6-dd79-4c54-9c87-bfc651c009df",
+                            Id = "a5633d28-c86e-47f3-aba6-626ec1ac6fcb",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "4902ed63-8360-42fb-9e3f-e64fa7306c58",
+                            Id = "72f17110-cc5c-4c96-8732-971d3d33fc4f",
                             Name = "Customer",
                             NormalizedName = "CUSTOMER"
                         });
@@ -244,8 +244,8 @@ namespace DigitalStore.Data.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "b756e11a-1cc1-4b20-82ca-b839bdb40d9c",
-                            RoleId = "029c0ed6-dd79-4c54-9c87-bfc651c009df"
+                            UserId = "0dbd1cce-fb90-42ff-87cb-3adbb63ca8a9",
+                            RoleId = "a5633d28-c86e-47f3-aba6-626ec1ac6fcb"
                         });
                 });
 
@@ -389,6 +389,11 @@ namespace DigitalStore.Data.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("text");
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(256)
+                        .HasColumnType("character varying(256)");
+
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)");
@@ -443,14 +448,15 @@ namespace DigitalStore.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "b756e11a-1cc1-4b20-82ca-b839bdb40d9c",
-                            ConcurrencyStamp = "1f63a2ff-4ec8-49f5-8b63-f32e2331dd32",
+                            Id = "0dbd1cce-fb90-42ff-87cb-3adbb63ca8a9",
+                            ConcurrencyStamp = "bcbb4a95-2347-4398-97d5-569c0936d2b1",
+                            Email = "admin@example.com",
                             NormalizedEmail = "ADMIN@EXAMPLE.COM",
                             NormalizedUserName = "ADMIN",
                             Password = "admin123",
                             Points = 10,
                             Role = "Admin",
-                            SecurityStamp = "e69c7fe5-4338-495c-8125-8f966ad57bd8",
+                            SecurityStamp = "275c47ff-79bb-4d84-9076-fa5f91db2a60",
                             Surname = "admin",
                             Username = "admin",
                             WalletBalance = 2000m,

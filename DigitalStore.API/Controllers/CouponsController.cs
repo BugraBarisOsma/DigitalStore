@@ -31,13 +31,14 @@ public class CouponsController : ControllerBase
     /// </summary>
     /// <response code="200">Success</response>
     [HttpGet]
+    [Authorize(Roles = "Admin,Customer")] 
     public async Task<IActionResult> GetCoupons()
     {
         var coupons = await _couponService.GetCouponsAsync();
         return Ok(coupons);
     }
     /// <summary>
-    /// delete a coupon
+    /// Delete a coupon
     /// </summary>
     /// <response code="200">Success</response>
     [HttpDelete("{id}")]

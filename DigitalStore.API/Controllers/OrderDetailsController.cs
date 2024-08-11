@@ -74,15 +74,11 @@ public class OrderDetailController : ControllerBase
     /// </summary>
     /// <response code="200">Success</response>
     /// <response code="404">Order Not Found</response>
-    [HttpPut("{id}")]
-    public async Task<IActionResult> UpdateOrderDetail(Guid id, [FromBody] OrderDetail orderDetail)
+    [HttpPut]
+    public async Task<IActionResult> UpdateOrderDetail([FromBody] OrderDetailRequestDTO orderDetailDTO)
     {
-        if (id != orderDetail.Id)
-        {
-            return BadRequest();
-        }
-        await _orderDetailService.UpdateOrderDetailAsync(orderDetail);
-        return NoContent();
+        await _orderDetailService.UpdateOrderDetailAsync(orderDetailDTO);
+        return Ok();
     }
     /// <summary>
     /// delete a order detail

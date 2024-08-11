@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "dIodk+xswwnLH4GX4qSnKW8Rd97sSdti2d7d8X4aLxukVjonr9RL78pHivfLooDAGc0jZnzzA02wuf+092NVTw==",
+  "dgSpecHash": "fKRcBDT17Jvpcliwl6pE7vY8sXisn7xTB6qBVPdrPZP2d5koOenPNJH8z38+N32tZntPwzo66l9hcfy6wbn4tw==",
   "success": true,
   "projectFilePath": "/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.API/DigitalStore.API.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,9 @@
     "/Users/bugrabarisosma/.nuget/packages/automapper/13.0.1/automapper.13.0.1.nupkg.sha512",
     "/Users/bugrabarisosma/.nuget/packages/automapper.contrib.autofac.dependencyinjection/8.0.0/automapper.contrib.autofac.dependencyinjection.8.0.0.nupkg.sha512",
     "/Users/bugrabarisosma/.nuget/packages/dapper/2.0.123/dapper.2.0.123.nupkg.sha512",
+    "/Users/bugrabarisosma/.nuget/packages/fluentvalidation/11.9.2/fluentvalidation.11.9.2.nupkg.sha512",
+    "/Users/bugrabarisosma/.nuget/packages/fluentvalidation.aspnetcore/11.3.0/fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "/Users/bugrabarisosma/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.9.2/fluentvalidation.dependencyinjectionextensions.11.9.2.nupkg.sha512",
     "/Users/bugrabarisosma/.nuget/packages/hangfire/1.8.14/hangfire.1.8.14.nupkg.sha512",
     "/Users/bugrabarisosma/.nuget/packages/hangfire.aspnetcore/1.8.14/hangfire.aspnetcore.1.8.14.nupkg.sha512",
     "/Users/bugrabarisosma/.nuget/packages/hangfire.core/1.8.14/hangfire.core.1.8.14.nupkg.sha512",
@@ -83,6 +86,7 @@
     "/Users/bugrabarisosma/.nuget/packages/runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "/Users/bugrabarisosma/.nuget/packages/runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "/Users/bugrabarisosma/.nuget/packages/runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
+    "/Users/bugrabarisosma/.nuget/packages/serilog/4.0.1/serilog.4.0.1.nupkg.sha512",
     "/Users/bugrabarisosma/.nuget/packages/swashbuckle.aspnetcore/6.4.0/swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "/Users/bugrabarisosma/.nuget/packages/swashbuckle.aspnetcore.swagger/6.4.0/swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "/Users/bugrabarisosma/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.4.0/swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",

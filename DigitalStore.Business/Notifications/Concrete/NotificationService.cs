@@ -3,6 +3,7 @@ using System.Text;
 using System.Text.Json;
 using DigitalStore.Business.Notifications.Abstract;
 using DigitalStore.Data.UnitOfWork;
+using Microsoft.Extensions.Configuration;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 
@@ -12,12 +13,13 @@ namespace DigitalStore.Business.Notifications.Concrete;
     {
         private readonly ConnectionFactory _connectionFactory;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IConfiguration _configuration;
 
-        public NotificationService(ConnectionFactory connectionFactory,IUnitOfWork unitOfWork)
+        public NotificationService(ConnectionFactory connectionFactory,IUnitOfWork unitOfWork,IConfiguration configuration)
         {
             _unitOfWork=unitOfWork;
             _connectionFactory = connectionFactory;
-           
+            _configuration = configuration;
         }
         
         public async Task SendEmail(string subject, string userId, string content)
@@ -65,20 +67,26 @@ namespace DigitalStore.Business.Notifications.Concrete;
             channel.BasicConsume(queue: "email_queue", autoAck: false, consumer: consumer);
         }
 
-        public void SendEmailDirect(string subject, string email, string content)
+        public async Task SendEmailDirect(string subject, string userId, string content)
         {
-            // Your existing SMTP email sending code
-            SmtpClient mySmtpClient = new SmtpClient("my.smtp.exampleserver.net");
+            var user = await _unitOfWork.GetRepository<User>().GetByIdAsync(new Guid(userId));
+            var email = user.Email;
+            SmtpClient mySmtpClient = new SmtpClient(
+                _configuration.GetSection("SMTPConfig").GetValue<string>("SmtpHost"),
+                _configuration.GetSection("SMTPConfig").GetValue<int>("SmtpPort"));
 
             mySmtpClient.UseDefaultCredentials = false;
-            System.Net.NetworkCredential basicAuthenticationInfo = new
-                System.Net.NetworkCredential("username", "password");
+            System.Net.NetworkCredential basicAuthenticationInfo = new 
+                System.Net.NetworkCredential(
+                    _configuration.GetSection("SMTPConfig").GetValue<string>("SmtpUser"), 
+                    _configuration.GetSection("SMTPConfig").GetValue<string>("SmtpPass")
+                    );
             mySmtpClient.Credentials = basicAuthenticationInfo;
 
             MailAddress from = new MailAddress("test@example.com", "TestFromName");
-            MailAddress to = new MailAddress(email, "TestToName");
+            MailAddress to = new MailAddress(email, "TestName");
             MailMessage myMail = new System.Net.Mail.MailMessage(from, to);
-            MailAddress replyTo = new MailAddress("reply@example.com");
+            MailAddress replyTo = new MailAddress("alsadrink@gmail.com");
             myMail.ReplyToList.Add(replyTo);
 
             myMail.Subject = subject;

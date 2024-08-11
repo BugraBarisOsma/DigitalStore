@@ -140,3 +140,4 @@
 /Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.API/obj/Debug/net8.0/DigitalStore.API.sourcelink.json
 /Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.API/bin/Debug/net8.0/Hangfire.SqlServer.dll
 /Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.API/bin/Debug/net8.0/DigitalStore.API.xml
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.API/bin/Debug/net8.0/Serilog.dll

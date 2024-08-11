@@ -1,6 +1,7 @@
 
 using System.Reflection;
 using System.Text;
+using DigitalStore.API.Middlewares;
 using DigitalStore.Business.Helpers;
 using DigitalStore.Business.Mapping;
 using DigitalStore.Business.Notifications.Abstract;
@@ -146,6 +147,7 @@ app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllers();
 });
+app.UseMiddleware<ErrorHandlerMiddleware>();
 app.UseHttpsRedirection();
 app.Run();
 

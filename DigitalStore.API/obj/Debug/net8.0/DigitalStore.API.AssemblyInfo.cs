@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DigitalStore.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b7bacd13c5c43df74b181d54eb8db3bf7b8a6271")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ac03e365a69d0174187b97487c6155342e087fd2")]
 [assembly: System.Reflection.AssemblyProductAttribute("DigitalStore.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DigitalStore.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

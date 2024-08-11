@@ -2,6 +2,7 @@ using AutoMapper;
 using DigitalStore.Business.Services.Abstract;
 using DigitalStore.Core.DTOs;
 using DigitalStore.Data.UnitOfWork;
+using Microsoft.EntityFrameworkCore;
 
 namespace DigitalStore.Business.Services.Concrete;
 
@@ -19,12 +20,12 @@ public class OrderDetailService : IOrderDetailService
 
     public async Task<OrderDetail> GetOrderDetailByIdAsync(Guid id)
     {
-        return await _unitOfWork.GetRepository<OrderDetail>().GetByIdAsync(id);
+        return await _unitOfWork.GetRepository<OrderDetail>().GetByFilterAsync(x=>x.OrderId==id,include:q=>q.Include(x=>x.Order).ThenInclude(x=>x.User));
     }
 
     public async Task<IEnumerable<OrderDetail>> GetAllOrderDetailsAsync()
     {
-        return await _unitOfWork.GetRepository<OrderDetail>().GetAllAsync();
+        return await _unitOfWork.GetRepository<OrderDetail>().GetAllByFilterAsync(x=>x.IsActive);
     }
 
     public async Task CreateOrderDetailAsync(OrderDetail orderDetail)
@@ -33,10 +34,28 @@ public class OrderDetailService : IOrderDetailService
         await _unitOfWork.SaveChangesAsync();
     }
 
-    public async Task UpdateOrderDetailAsync(OrderDetail orderDetail)
+    public async Task UpdateOrderDetailAsync(OrderDetailRequestDTO orderDetailDTO)
     {
-        _unitOfWork.GetRepository<OrderDetail>().UpdateAsync(orderDetail);
-        await _unitOfWork.SaveChangesAsync();
+        var order = await _unitOfWork.GetRepository<Order>()
+            .GetByFilterAsync(
+                o=>o.Id==orderDetailDTO.OrderId,
+                include: q=>q.Include(p=>p.OrderDetails).ThenInclude(p=>p.Product));
+        if (order!=null)
+        {
+            var orderDetail = order.OrderDetails.FirstOrDefault(od => od.Id == orderDetailDTO.Id);
+            orderDetail.Quantity = orderDetailDTO.Quantity;
+            if (orderDetailDTO.Quantity == 0)
+            {
+                _unitOfWork.GetRepository<OrderDetail>().DeleteAsync(orderDetail);
+            }
+            _unitOfWork.GetRepository<OrderDetail>().UpdateAsync(orderDetail);
+            await _unitOfWork.SaveChangesAsync();
+        }
+        else
+        {
+            throw new Exception("OrderDetail Not Found");
+        }
+        
     }
 
     public async Task DeleteOrderDetailAsync(Guid id)

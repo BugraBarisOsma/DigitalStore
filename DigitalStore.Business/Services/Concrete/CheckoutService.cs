@@ -27,13 +27,14 @@ namespace DigitalStore.Business.Services.Concrete
                 throw new Exception("Order not found");
             }
 
+       
             decimal totalAmount = order.TotalAmount;
             var user = order.User;
 
             if (!string.IsNullOrEmpty(couponCode))
             {
                 var coupon = await _unitOfWork.GetRepository<Coupon>()
-                    .GetByFilterAsync(x => x.Code == couponCode && x.IsActive == false && x.ExpiryDate >= DateTime.UtcNow);
+                    .GetByFilterAsync(x => x.Code == couponCode && x.IsActive == true && x.ExpiryDate >= DateTime.UtcNow);
                 
                 if (coupon == null)
                 {
@@ -43,7 +44,7 @@ namespace DigitalStore.Business.Services.Concrete
                 totalAmount -= coupon.Amount;
                 totalAmount = Math.Max(totalAmount, 0);
 
-                coupon.IsActive = true;
+                coupon.IsActive = false;
                 await _unitOfWork.GetRepository<Coupon>().UpdateAsync(coupon);
             }
 

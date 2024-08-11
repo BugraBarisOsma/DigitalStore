@@ -33,7 +33,7 @@ namespace DigitalStore.API.Controllers
             {
                 var result = await _checkoutService.CheckoutAsync(orderId, couponCode, pointsToUse);
                 
-                _notificationService.SendEmail("Order Confirmation", result.UserId, "Your order has been confirmed. Thank you for shopping with us.");
+                await _notificationService.SendEmail("Order Confirmation", result.UserId, "Your order has been confirmed. Thank you for shopping with us.");
                 return Ok(result);
             }
             catch (Exception ex)

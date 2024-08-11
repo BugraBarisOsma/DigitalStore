@@ -27,7 +27,6 @@ public class AppDbContext : IdentityDbContext<User, IdentityRole, string>
 
         // IdentityUser özelliklerini yoksaymak icin bunlar eklendi
         builder.Entity<User>().Ignore(u => u.UserName);
-        builder.Entity<User>().Ignore(u => u.Email);
         builder.Entity<User>().Ignore(u => u.EmailConfirmed);
         builder.Entity<User>().Ignore(u => u.PasswordHash);
         builder.Entity<User>().Ignore(u => u.PhoneNumber);

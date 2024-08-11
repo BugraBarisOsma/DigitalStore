@@ -32,7 +32,7 @@ public class UserService : IUserService
         _jwtTokenGenerator = jwtTokenGenerator;
     }
     
-    public async Task<User> RegisterUserAsync(UserRequestDTO userDto)
+    public async Task<UserResponseDTO> RegisterUserAsync(UserRequestDTO userDto)
     {
         var user = _mapper.Map<User>(userDto);
         user.Role = "Customer";
@@ -42,8 +42,9 @@ public class UserService : IUserService
         user.isActive = true;
        
         var regiesteredUser  = await _unitOfWork.GetRepository<User>().AddAsync(user);
+        var userResponse = _mapper.Map<UserResponseDTO>(regiesteredUser);
         await _unitOfWork.SaveChangesAsync();
-        return regiesteredUser;
+        return userResponse;
 
     }
 

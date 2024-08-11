@@ -63,7 +63,7 @@
         </member>
         <member name="M:DigitalStore.API.Controllers.CouponsController.DeleteCoupon(System.Guid)">
             <summary>
-            delete a coupon
+            Delete a coupon
             </summary>
             <response code="200">Success</response>
         </member>
@@ -88,7 +88,7 @@
             <response code="200">Success</response>
             <response code="404">Order Not Found</response>
         </member>
-        <member name="M:DigitalStore.API.Controllers.OrderDetailController.UpdateOrderDetail(System.Guid,OrderDetail)">
+        <member name="M:DigitalStore.API.Controllers.OrderDetailController.UpdateOrderDetail(DigitalStore.Core.DTOs.OrderDetailRequestDTO)">
             <summary>
             Update a order detail
             </summary>
