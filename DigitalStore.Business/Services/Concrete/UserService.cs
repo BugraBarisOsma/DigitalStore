@@ -40,10 +40,11 @@ public class UserService : IUserService
         user.WalletBalance = 1000;
         user.Points = 10;
         user.isActive = true;
-       
-        var regiesteredUser  = await _unitOfWork.GetRepository<User>().AddAsync(user);
+
+        var regiesteredUser = await _unitOfWork.GetRepository<User>().AddAsync(user);
         var userResponse = _mapper.Map<UserResponseDTO>(regiesteredUser);
         await _unitOfWork.SaveChangesAsync();
+        await _userManager.AddToRoleAsync(regiesteredUser, "Customer");
         return userResponse;
 
     }

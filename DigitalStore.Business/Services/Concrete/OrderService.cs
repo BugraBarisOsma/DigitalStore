@@ -23,7 +23,7 @@ public class OrderService : IOrderService
     public async Task<List<OrderResponseDTO>> GetActiveOrdersAsync()
     {
         var activeOrders = await _unitOfWork.GetRepository<Order>()
-            .GetAllByFilterAsync(o => o.IsActive); 
+            .GetAllByFilterAsync(o => o.IsActive,include:q=>q.Include(o=>o.OrderDetails)); 
         return _mapper.Map<List<OrderResponseDTO>>(activeOrders);
     }
     public async Task<Order> CreateOrderForUserAsync(string userId)
@@ -51,7 +51,7 @@ public class OrderService : IOrderService
     public async Task<List<OrderResponseDTO>> GetOrderHistoryAsync()
     {
         var orderHistory = await _unitOfWork.GetRepository<Order>()
-            .GetAllByFilterAsync(o => !o.IsActive); 
+            .GetAllByFilterAsync(o => !o.IsActive,include:q=>q.Include(o=>o.OrderDetails)); 
         return _mapper.Map<List<OrderResponseDTO>>(orderHistory);
     }
 

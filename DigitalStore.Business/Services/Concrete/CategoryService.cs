@@ -68,7 +68,7 @@ public class CategoryService : ICategoryService
 
     public async Task<List<CategoryResponseDTO>> GetCategoriesAsync()
     {
-        var categories = await _unitOfWork.GetRepository<Category>().GetAllAsync();
+        var categories = await _unitOfWork.GetRepository<Category>().GetAllByFilterAsync(x=>x.IsActive);
         return _mapper.Map<List<CategoryResponseDTO>>(categories);
     }
 

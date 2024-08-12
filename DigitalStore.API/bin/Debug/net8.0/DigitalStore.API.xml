@@ -118,7 +118,7 @@
         </member>
         <member name="M:DigitalStore.API.Controllers.OrdersController.GetOrderDetails(System.Guid)">
             <summary>
-            Get all order details
+            Get your order's details
             </summary>
             <response code="200">Success</response>
             <response code="404">Order Not Found</response>

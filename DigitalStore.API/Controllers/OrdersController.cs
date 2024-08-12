@@ -40,7 +40,7 @@ public class OrdersController : ControllerBase
         return Ok(orders);
     }
     /// <summary>
-    /// Get all order details
+    /// Get your order's details
     /// </summary>
     /// <response code="200">Success</response>
     /// <response code="404">Order Not Found</response>

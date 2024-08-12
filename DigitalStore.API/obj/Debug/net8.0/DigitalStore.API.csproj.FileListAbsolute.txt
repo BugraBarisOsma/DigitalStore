@@ -141,3 +141,6 @@
 /Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.API/bin/Debug/net8.0/Hangfire.SqlServer.dll
 /Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.API/bin/Debug/net8.0/DigitalStore.API.xml
 /Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.API/bin/Debug/net8.0/Serilog.dll
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.API/bin/Debug/net8.0/FluentValidation.dll
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.API/bin/Debug/net8.0/FluentValidation.AspNetCore.dll
+/Users/bugrabarisosma/Projects/DigitalStore/DigitalStore.API/bin/Debug/net8.0/FluentValidation.DependencyInjectionExtensions.dll

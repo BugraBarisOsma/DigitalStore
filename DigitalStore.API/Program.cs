@@ -11,6 +11,9 @@ using DigitalStore.Business.Services.Concrete;
 using DigitalStore.Core.DTOs.JWT;
 using DigitalStore.Data.Contexts;
 using DigitalStore.Data.UnitOfWork;
+using DigitalStore.Data.Validations;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Hangfire;
 using Hangfire.PostgreSql;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -64,6 +67,11 @@ builder.Services.AddHangfire(configuration => configuration
         
     }));
 builder.Services.AddHangfireServer();
+
+//FluentValidation
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddFluentValidationClientsideAdapters();
+builder.Services.AddValidatorsFromAssemblyContaining<CategoryRequestValidation>();
 
 // JWT
 builder.Services.AddScoped<JwtGenerator>();

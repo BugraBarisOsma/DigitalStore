@@ -7,7 +7,7 @@ namespace DigitalStore.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-[Authorize(Roles = "Admin")]
+
 public class CouponsController : ControllerBase
 {
     private readonly ICouponService _couponService;
@@ -21,6 +21,7 @@ public class CouponsController : ControllerBase
     /// </summary>
     /// <response code="200">Success</response>
     [HttpPost]
+    [Authorize(Roles = "Admin,Customer")]
     public async Task<IActionResult> CreateCoupon(CouponRequestDTO couponDto)
     {
         await _couponService.CreateCouponAsync(couponDto);
@@ -31,7 +32,7 @@ public class CouponsController : ControllerBase
     /// </summary>
     /// <response code="200">Success</response>
     [HttpGet]
-    [Authorize(Roles = "Admin,Customer")] 
+    
     public async Task<IActionResult> GetCoupons()
     {
         var coupons = await _couponService.GetCouponsAsync();
@@ -42,6 +43,7 @@ public class CouponsController : ControllerBase
     /// </summary>
     /// <response code="200">Success</response>
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> DeleteCoupon(Guid id)
     {
         await _couponService.DeleteCouponAsync(id);
